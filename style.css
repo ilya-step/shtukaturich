@@ -543,6 +543,10 @@ a.cart:hover img {
 	padding-bottom: 30px;
 }
 
+.main-top-banner__body * {
+	cursor: pointer;
+}
+
 .main-top-banner__body {
 	display: flex;
 	align-items: center;
@@ -603,7 +607,8 @@ a.cart:hover img {
 	padding-bottom: 30px;
 }
 
-.main-plate>div {
+.main-plate>a {
+	display: block;
 	width: 100%;
 	min-height: 280px;
 	background-color: #F2F3F4;
@@ -611,6 +616,17 @@ a.cart:hover img {
 	padding: 40px 20px 40px;
 	overflow: hidden;
 	position: relative;
+	box-shadow: 0 5px 12px #c3c3c300;
+	transition: .3s;
+}
+
+.main-plate>a * {
+	cursor: pointer;
+}
+
+.main-plate>a:hover {
+	box-shadow: 0 5px 12px #c3c3c3;
+	background-color: #fff;
 }
 
 .grid-3 {
@@ -670,7 +686,7 @@ a.cart:hover img {
 	color: #FFFFFF;
 }
 
-.main-plate>div:before {
+.main-plate>a:before {
 	content: '';
 	position: absolute;
 	display: block;
@@ -682,7 +698,7 @@ a.cart:hover img {
 	background-color: #FFD528;
 }
 
-.main-plate>div img {
+.main-plate>a img {
 	position: absolute;
 	display: block;
 	bottom: 10px;
@@ -743,6 +759,11 @@ a.cart:hover img {
 	overflow: hidden;
 	margin: 20px 10px;
 	box-shadow: 0px 0px 20px rgba(191, 191, 191, 0.25);
+	transition: .3s;
+}
+
+.prod-card:hover {
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
 
 .prod-card__wrapper {
@@ -912,6 +933,10 @@ a.cart:hover img {
 	padding: 0 100px;
 }
 
+.banner-bonusSystem * {
+	cursor: pointer;
+}
+
 .banner-bonusSystem.for-category {
 	padding-left: 15px;
 }
@@ -961,13 +986,25 @@ a.cart:hover img {
 	grid-column: span 2;
 }
 
+.promotion-item * {
+	cursor: pointer;
+}
+
 .promotion-item {
+	display: block;
 	min-height: 280px;
 	background-color: #F2F3F4;
 	border-radius: 8px;
 	padding: 40px 20px 50px;
 	overflow: hidden;
 	position: relative;
+	box-shadow: 0px 0px 20px rgb(0 0 0 / 0%);
+	transition: .3s;
+}
+
+.promotion-item:hover {
+	box-shadow: 0px 0px 20px rgb(0 0 0 / 25%);
+	background-color: #fff;
 }
 
 .promotion-item img {
@@ -1789,6 +1826,135 @@ footer {
 	left: 5px;
 }
 
+@media screen and (min-width: 980px) {
+	.step1 {
+		transform: scale(1);
+		animation: step1 4s infinite ease-in-out;
+	}
+
+	.step2 {
+		transform: scale(1);
+		animation: step2 4s infinite ease-in-out;
+	}
+
+	.step3 {
+		transform: scale(1);
+		animation: step3 4s infinite ease-in-out;
+	}
+
+	.step4 {
+		transform: scale(1);
+		animation: step4 4s infinite ease-in-out;
+	}
+
+	.step5 {
+		transform: scale(1);
+		animation: step5 4s infinite ease-in-out;
+	}
+}
+
+@keyframes step1 {
+	0% {
+		transform: scale(1)
+	}
+
+	10% {
+		transform: scale(1.03)
+	}
+
+	30% {
+		transform: scale(1)
+	}
+
+	100% {
+		transform: scale(1)
+	}
+}
+
+@keyframes step2 {
+	0% {
+		transform: scale(1)
+	}
+
+	20% {
+		transform: scale(1)
+	}
+
+	30% {
+		transform: scale(1.03)
+	}
+
+	40% {
+		transform: scale(1)
+	}
+
+	100% {
+		transform: scale(1)
+	}
+}
+
+@keyframes step3 {
+	0% {
+		transform: scale(1)
+	}
+
+	30% {
+		transform: scale(1)
+	}
+
+	50% {
+		transform: scale(1.03)
+	}
+
+	60% {
+		transform: scale(1)
+	}
+
+	100% {
+		transform: scale(1)
+	}
+}
+
+@keyframes step4 {
+	0% {
+		transform: scale(1)
+	}
+
+	50% {
+		transform: scale(1)
+	}
+
+	70% {
+		transform: scale(1.03)
+	}
+
+	80% {
+		transform: scale(1)
+	}
+
+	100% {
+		transform: scale(1)
+	}
+}
+
+@keyframes step5 {
+	0% {
+		transform: scale(1)
+	}
+
+	70% {
+		transform: scale(1)
+	}
+
+	90% {
+		transform: scale(1.03)
+	}
+
+	100% {
+		transform: scale(1)
+	}
+}
+
 
 
 
@@ -2145,6 +2311,12 @@ footer {
 	border-radius: 8px;
 	display: flex;
 	flex-direction: column;
+	box-shadow: 0px 0px 20px rgb(0 0 0 / 0%);
+	transition: .3s;
+}
+
+.catalog-materials__item:hover {
+	box-shadow: 0px 0px 20px rgb(0 0 0 / 25%);
 }
 
 .catalog-materials__item-img {
@@ -2340,7 +2512,6 @@ footer {
 
 .category-plate .prod-card {
 	margin: 0 !important;
-	box-shadow: none;
 }
 
 
@@ -2815,6 +2986,7 @@ footer {
 	font-size: 30px;
 	line-height: 110%;
 	text-align: left;
+	margin-bottom: 30px;
 }
 
 .popup-form-text {
@@ -2949,11 +3121,11 @@ footer {
 		grid-column: span 12;
 	}
 
-	.main-plate>div:nth-child(3) {
+	.main-plate>a:nth-child(3) {
 		order: 7;
 	}
 
-	.main-plate>div:nth-child(4) {
+	.main-plate>a:nth-child(4) {
 		order: 8;
 	}
 
@@ -3774,7 +3946,7 @@ footer {
 		gap: 10px;
 	}
 
-	.main-plate>div {
+	.main-plate>a {
 		min-height: auto;
 		padding: 20px 10px 100px;
 	}
