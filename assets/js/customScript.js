@@ -163,6 +163,7 @@ $(document).ready(function () {
 		dots: false, //Отключил точки
 		smartSpeed: 1000, //Время движения слайда
 		checkVisible: false,
+		mouseDrag: false,
 		responsive: { //Адаптация в зависимости от разрешения экрана
 			0: {
 				items: 1
@@ -175,7 +176,7 @@ $(document).ready(function () {
 });
 
 
-// слайдер slick
+// слайдер slick в карточке товара
 $('.slider-product-for').slick({
 	slidesToShow: 1,
 	slidesToScroll: 1,
