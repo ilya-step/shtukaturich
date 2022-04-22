@@ -4186,6 +4186,10 @@ footer {
 		position: relative;
 	}
 
+	.banner-bonusSystem .banner-bonusSystem__img {
+		display: none;
+	}
+
 	.banner-bonusSystem.for-category .banner-bonusSystem__img {
 		display: block;
 		position: absolute;
