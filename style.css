@@ -3776,10 +3776,6 @@ footer {
 		max-width: 170px !important;
 	}
 
-	.banner-bonusSystem__img {
-		display: none;
-	}
-
 	.banner-bonusSystem {
 		justify-content: end;
 		padding: 0 20px;
@@ -4185,6 +4181,24 @@ footer {
 	.category-page {
 		padding-top: 15px;
 	}
+
+	.banner-bonusSystem.for-category {
+		position: relative;
+	}
+
+	.banner-bonusSystem.for-category .banner-bonusSystem__img {
+		display: block;
+		position: absolute;
+		width: 100px;
+		z-index: 0;
+		bottom: 0px;
+		left: 6px;
+	}
+
+	.banner-bonusSystem__text {
+		position: relative;
+		z-index: 1;
+	}
 }
 
 @media screen and (max-width: 550px) {
@@ -4350,7 +4364,7 @@ footer {
 	}
 
 	.type-block__items-item {
-		width: 170px;
+		width: 150px;
 		flex-shrink: 0;
 	}
 
