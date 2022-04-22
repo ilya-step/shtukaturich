@@ -18,6 +18,7 @@ const menuItem = document.querySelector('.menu-item');
 if (iconMenu) {
 	const menuBody = document.querySelector('.menubox');
 	iconMenu.addEventListener("click", function (e) {
+		document.body.classList.toggle('_lock')
 		iconMenu.classList.toggle('active');
 		menuBody.classList.toggle('active');
 	});
@@ -27,6 +28,7 @@ if (iconMenu) {
 	var j;
 	for (j = 0; j < menuItems.length; j++) {
 		menuItems[j].addEventListener("click", function () {
+			document.body.classList.toggle('_lock')
 			iconMenu.classList.toggle('active');
 			menuBody.classList.toggle('active');
 		});
@@ -74,9 +76,9 @@ $(".card__tab").click(function () {
 });
 
 
-// Попап
-let pop = $('.popup__overlay')
-$('.popup__toggle').click(function () {
+// Попап дефолтный
+let pop = $('.popup-1')
+$('.popup__toggle-1').click(function () {
 	pop.addClass('_active')
 })
 pop.click(function (event) {
@@ -87,6 +89,20 @@ pop.click(function (event) {
 })
 $('.popup__close').click(function () {
 	pop.removeClass('_active')
+})
+// Попап консультации
+let pop2 = $('.popup-2')
+$('.popup__toggle-2').click(function () {
+	pop2.addClass('_active')
+})
+pop2.click(function (event) {
+	e = event || window.event
+	if (e.target == this) {
+		$(pop2).removeClass('_active')
+	}
+})
+$('.popup__close').click(function () {
+	pop2.removeClass('_active')
 })
 
 
@@ -135,30 +151,28 @@ selector2.addEventListener('input', function () {
 // слайдер owl
 $(document).ready(function () {
 	$(".owl-4-items").owlCarousel({
-		margin: 20, //Отступ от картино если выводите больше 1
+		margin: 20,
 		nav: true, //Включил навигацию
 		dots: false, //Отключил точки
 		smartSpeed: 1000, //Время движения слайда
 		checkVisible: false,
 		responsive: { //Адаптация в зависимости от разрешения экрана
 			0: {
-				items: 1
-			},
-			600: {
-				items: 2
+				items: 2,
+				margin: 10,
 			},
 			900: {
 				items: 3
 			},
 			1200: {
-				margin: 0, //Отступ от картино если выводите больше 1
+				margin: 0,
 				items: 4
 			}
 		}
 	});
 	$(".owl-2-items").owlCarousel({
 		loop: true, //Зацикливаем слайдер
-		margin: 20, //Отступ от картино если выводите больше 1
+		margin: 20,
 		nav: true, //Включил навигацию
 		dots: false, //Отключил точки
 		smartSpeed: 1000, //Время движения слайда
@@ -184,7 +198,15 @@ $('.slider-product-for').slick({
 	waitForAnimate: false,  // не ждать анимацию при принудительной прокрутке
 	arrows: false,
 	fade: true,
-	asNavFor: '.slider-product-nav'
+	asNavFor: '.slider-product-nav',
+	responsive: [
+		{
+			breakpoint: 500,
+			settings: {
+				dots: true,
+			}
+		}
+	]
 });
 $('.slider-product-nav').slick({
 	slidesToShow: 4,
